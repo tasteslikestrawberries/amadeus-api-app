@@ -1,0 +1,6 @@
+@import '../../../../assets/scss/mixins';
+
+.noDataText {
+  @include flex-center;
+  margin: 1rem 0;
+}

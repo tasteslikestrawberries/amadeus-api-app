@@ -1,0 +1,28 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ebf5ff;
+  color: #1c1c34;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul, div {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 700;
+  border: 1.5px solid #4badee;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0.5em;
+}

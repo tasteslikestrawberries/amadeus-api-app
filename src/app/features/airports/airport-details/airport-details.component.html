@@ -1,0 +1,13 @@
+<div *ngIf="airport$ | async as airport; else noData">
+  {{airport.address.cityCode}}
+  <div class="form-wrapper">
+    <form>
+    
+    </form>
+  </div>
+</div>
+
+
+<ng-template #noData>
+  <div class="noDataText">Nema podataka.</div>
+</ng-template>

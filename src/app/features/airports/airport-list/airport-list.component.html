@@ -1,0 +1,31 @@
+<app-header
+  #header
+  title="Airports"
+  [subtitle]="getAirportName()"
+></app-header>
+
+<div *ngIf="!header.isDetailsMode; else detailsTemplate" class="list-wrapper">
+  <div>
+    <input #input type="text" placeholder="Enter city..." />
+  </div>
+
+  <ul *ngIf="airports$ | async as airports">
+    <li class="airport-item" *ngFor="let airport of airports">
+      <span class="airport-name">{{ airport.name }}</span>
+      <button (click)="onAirportDetailsHandler(airport)" type="button">
+        Details
+      </button>
+    </li>
+  </ul>
+
+  <ng-container *ngIf="noResults"
+    ><span>Za upisan pojam nema rezultata</span></ng-container
+  >
+  <ng-container *ngIf="noInput"
+    ><span>Za pretragu zračnih luka upišite ime grada</span></ng-container
+  >
+</div>
+
+<ng-template #detailsTemplate>
+  <app-airport-details #airportDetailsComponent></app-airport-details>
+</ng-template>

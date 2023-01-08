@@ -1,0 +1,27 @@
+@import "../../../../assets/scss/mixins";
+
+.list-wrapper {
+  @include flex-center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.airport-item {
+  @include flex-start;
+  list-style-type: none;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.airport-name {
+  color: #4badee;
+  font-weight: 700;
+  width: 50%;
+}
+
+@media (width >=900px) {
+  .list-wrapper {
+    padding: 0;
+    margin: 2em 8em;
+  }
+}

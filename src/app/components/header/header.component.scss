@@ -1,0 +1,11 @@
+@import '../../../assets/scss/mixins';
+
+button {
+  margin: 1rem;
+}
+
+.header-wrapper {
+  @include flex-center;
+  letter-spacing: 0.25em;
+  font-weight: 200;
+}

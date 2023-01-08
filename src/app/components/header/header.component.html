@@ -1,0 +1,10 @@
+<ng-container *ngIf="isDetailsMode">
+  <button (click)="onBackClick()" type="button">Povratak na pretragu</button>
+</ng-container>
+
+<div class="header-wrapper">
+  <h1>
+    {{ title }}
+    <span *ngIf="isDetailsMode">- {{ subtitle }}</span>
+  </h1>
+</div>
