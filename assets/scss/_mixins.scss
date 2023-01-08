@@ -1,0 +1,23 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+}
+
+@mixin ellipsis-wrapper {
+  width:100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin ellipsis-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
