@@ -14,6 +14,7 @@ export class AirportDetailsComponent {
   airport!: IAirport;
 
   form = this.fb.group({
+    id: [''],
     iataCode: ['', [Validators.required]],
     name: ['', [Validators.required]],
     detailedName: ['', [Validators.required]],
@@ -41,6 +42,7 @@ export class AirportDetailsComponent {
     this.airport$ = this.route.data.pipe(
       map(({ airports }) => {
         this.airport = airports.data;
+        console.log(this.airport);
         this.populateForm(this.airport);
         return this.airport;
       }),
@@ -50,10 +52,12 @@ export class AirportDetailsComponent {
 
   populateForm(airport: IAirport) {
     const airportDataFromStorage = localStorage.getItem('airport');
-    if (airportDataFromStorage) {
-      this.form.patchValue(JSON.parse(airportDataFromStorage));
+
+    if (JSON.parse(airportDataFromStorage as string)?.id === airport.id) {
+      this.form.patchValue(JSON.parse(airportDataFromStorage as string));
     } else {
       this.form.patchValue({
+        id: airport.id,
         iataCode: airport.iataCode,
         name: airport.name,
         detailedName: airport.detailedName,
