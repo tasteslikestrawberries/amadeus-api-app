@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap, map } from 'rxjs';
+import { BehaviorSubject, Observable, tap, map, take } from 'rxjs';
 import { IAirport, IAirportsResponse } from '../models/IAirport';
 import { HttpClient } from '@angular/common/http';
 
@@ -19,7 +19,7 @@ export class AirportService {
       .get<IAirportsResponse>(
         `${this.baseUrl}/reference-data/locations?subType=CITY&keyword=${keyword}`
       )
-      .pipe(map(({ meta, data }) => data.slice(0, 5)));
+      .pipe(map(({ data }) => data.slice(0, 5)));
   }
 
   getAirport(id: string | null): Observable<IAirport> {

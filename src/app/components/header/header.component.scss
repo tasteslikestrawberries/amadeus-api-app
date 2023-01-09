@@ -1,11 +1,23 @@
-@import '../../../assets/scss/mixins';
+@import "../../../assets/scss/mixins";
 
 button {
   margin: 1rem;
+}
+
+h1 {
+  font-size: large;
+  margin: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .header-wrapper {
   @include flex-center;
   letter-spacing: 0.25em;
   font-weight: 200;
+}
+
+@media (width >=900px) {
+  h1 {
+    font-size: xx-large;
+  }
 }

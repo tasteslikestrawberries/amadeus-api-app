@@ -26,9 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  exports: [HttpClientModule],
   providers: [
     AuthService,
     {

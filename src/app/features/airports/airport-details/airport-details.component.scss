@@ -1,4 +1,20 @@
-@import '../../../../assets/scss/mixins';
+@import "../../../../assets/scss/mixins";
+
+.form-wrapper {
+  @include flex-center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2rem;
+}
 
 .noDataText {
   @include flex-center;

@@ -20,7 +20,8 @@ import { AirportDetailsComponent } from './../airport-details/airport-details.co
 })
 export class AirportListComponent {
   @ViewChild('input') input!: ElementRef<HTMLInputElement>;
-  @ViewChild('airportDetailsComponent') airportDetailsComponent!: AirportDetailsComponent;
+  @ViewChild('airportDetailsComponent')
+  airportDetailsComponent!: AirportDetailsComponent;
 
   airports$!: Observable<IAirport[]>;
   //isLoading = false;
@@ -35,7 +36,7 @@ export class AirportListComponent {
   }
 
   onInput() {
-    if(this.input) {
+    if (this.input) {
       this.airports$ = fromEvent(this.input.nativeElement, 'input').pipe(
         debounceTime(300),
         distinctUntilChanged(),
@@ -48,7 +49,7 @@ export class AirportListComponent {
           if (!value) {
             return of([]);
           }
-  
+
           //this.isLoading = true;
           return this.airportService.getAirports(value);
           //.pipe(finalize(() => (this.isLoading = false)));
@@ -72,7 +73,7 @@ export class AirportListComponent {
     this.router.navigate(['airports', airport.id]);
   }
 
-  getAirportName() {
-    return this.airportDetailsComponent?.airport?.name;
+  getAirportNameExpression() {
+    return `${this.airportDetailsComponent?.airport?.name}(${this.airportDetailsComponent?.airport?.address?.countryCode})`;
   }
 }

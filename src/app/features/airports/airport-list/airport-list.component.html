@@ -1,12 +1,8 @@
-<app-header
-  #header
-  title="Airports"
-  [subtitle]="getAirportName()"
-></app-header>
+<app-header #header title="Airports" [subtitle]="getAirportNameExpression()"></app-header>
 
 <div *ngIf="!header.isDetailsMode; else detailsTemplate" class="list-wrapper">
   <div>
-    <input #input type="text" placeholder="Enter city..." />
+    <input #input type="text" placeholder="Unesi grad..." />
   </div>
 
   <ul *ngIf="airports$ | async as airports">
@@ -18,12 +14,18 @@
     </li>
   </ul>
 
-  <ng-container *ngIf="noResults"
-    ><span>Za upisan pojam nema rezultata</span></ng-container
-  >
-  <ng-container *ngIf="noInput"
-    ><span>Za pretragu zračnih luka upišite ime grada</span></ng-container
-  >
+  <ng-container *ngIf="noResults">
+    <span> Za upisan pojam nema rezultata </span>
+  </ng-container>
+  <ng-container *ngIf="noInput">
+    <span> Za pretragu zračnih luka upišite ime grada </span>
+  </ng-container>
+  <!--<ng-container *ngIf="isLoading">
+    <span>
+      Loading...
+    </span>
+  </ng-container
+>-->
 </div>
 
 <ng-template #detailsTemplate>

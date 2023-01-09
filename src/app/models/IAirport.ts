@@ -16,15 +16,18 @@ export interface IAirport {
   iataCode: string;
   self: IAirportSelf;
   subType: string;
-  timeZoneOffset: Date;
+  timeZoneOffset: string;
   type: string;
+
 }
 
 interface IAirportAdress {
   cityCode: string;
   cityName: string;
   countryCode: string;
+  countryName: string;
   regionCode: string;
+  stateCode: string;
 }
 
 interface IAirportAnalytics {
@@ -42,3 +45,4 @@ interface IAirportSelf {
   href: string;
   methods: string[];
 }
+
