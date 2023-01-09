@@ -42,7 +42,7 @@ export class AirportDetailsComponent {
     this.airport$ = this.route.data.pipe(
       map(({ airports }) => {
         this.airport = airports.data;
-        console.log(this.airport);
+  
         this.populateForm(this.airport);
         return this.airport;
       }),
