@@ -4,16 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {
-    //this.setToken(environment.ACCESS_TOKEN);
-    //this.checkTokenValidity()
-  }
-
-  checkTokenValidity() {
-    if (this.getTokenExpirationDate() < new Date().getTime()) {
-      this.setToken('');
-    }
-  }
+  constructor() {}
 
   setToken(token: string) {
     localStorage.setItem('token', token);
@@ -21,13 +12,5 @@ export class AuthService {
 
   getToken(): string | null {
     return localStorage.getItem('token');
-  }
-
-  setTokenExpirationDate(date: string) {
-    localStorage.setItem('tokenExpirationDate', date);
-  }
-
-  getTokenExpirationDate() {
-    return +localStorage.getItem('tokenExpirationDate')!;
   }
 }

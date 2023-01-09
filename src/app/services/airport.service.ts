@@ -7,9 +7,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AirportService {
-  private airports = new BehaviorSubject<IAirport[]>([]);
-  airports$ = this.airports.asObservable();
-
   private baseUrl = 'https://test.api.amadeus.com/v1';
 
   constructor(private http: HttpClient) {}
