@@ -30,7 +30,7 @@ export class AuthInterceptor implements HttpInterceptor {
       catchError((err) => {
         if (err.status === 401) {
           return this.refreshToken().pipe(
-            switchMap(({ access_token, expires_in }) => {
+            switchMap(({ access_token }) => {
               this.authService.setToken(access_token);
               request = this.addTokenToRequest(request);
               return next.handle(request);
