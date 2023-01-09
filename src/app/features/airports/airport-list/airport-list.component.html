@@ -1,4 +1,8 @@
-<app-header #header title="Airports" [subtitle]="getAirportNameExpression()"></app-header>
+<app-header
+  #header
+  title="Airports"
+  [subtitle]="getAirportNameExpression()"
+></app-header>
 
 <div *ngIf="!header.isDetailsMode; else detailsTemplate" class="list-wrapper">
   <div>
@@ -9,7 +13,7 @@
     <li class="airport-item" *ngFor="let airport of airports">
       <span class="airport-name">{{ airport.name }}</span>
       <button (click)="onAirportDetailsHandler(airport)" type="button">
-        Details
+        Detalji
       </button>
     </li>
   </ul>

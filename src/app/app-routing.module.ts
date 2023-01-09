@@ -18,7 +18,7 @@ const routes: Routes = [
     component: AirportListComponent,
 
     resolve: {
-      airports: AirportResolver
+      airport: AirportResolver
     },
   },
   { path: '**', redirectTo: '' }

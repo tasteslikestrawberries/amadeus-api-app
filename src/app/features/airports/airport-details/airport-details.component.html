@@ -1,4 +1,4 @@
-<div *ngIf="airport$ | async as airport; else noData">
+<div *ngIf="airport; else noData">
   <div class="form-wrapper">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form-control">

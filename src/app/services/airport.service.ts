@@ -20,8 +20,8 @@ export class AirportService {
   }
 
   getAirport(id: string | null): Observable<IAirport> {
-    return this.http.get<IAirport>(
-      `${this.baseUrl}/reference-data/locations/${id}`
-    );
+    return this.http
+      .get<{ data: IAirport }>(`${this.baseUrl}/reference-data/locations/${id}`)
+      .pipe(map(({ data }) => data));
   }
 }

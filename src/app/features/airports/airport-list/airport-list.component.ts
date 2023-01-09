@@ -74,6 +74,6 @@ export class AirportListComponent {
   }
 
   getAirportNameExpression() {
-    return `${this.airportDetailsComponent?.airport?.name}(${this.airportDetailsComponent?.airport?.address?.countryCode})`;
+    return `${this.airportDetailsComponent?.airport?.name}(${this.airportDetailsComponent?.airport?.countryCode})`;
   }
 }

@@ -18,7 +18,26 @@ export interface IAirport {
   subType: string;
   timeZoneOffset: string;
   type: string;
+}
 
+export interface IAirportFormData {
+  id: string;
+  isFromLocalStorage: boolean;
+  iataCode: string;
+  name: string;
+  detailedName: string;
+  type: string;
+  subType: string;
+  regionCode: string;
+  stateCode: string;
+  countryCode: string;
+  countryName: string;
+  cityCode: string;
+  cityName: string;
+  latitude: number;
+  longitude: number;
+  timeZoneOffset: string;
+  score: number;
 }
 
 interface IAirportAdress {
@@ -45,4 +64,3 @@ interface IAirportSelf {
   href: string;
   methods: string[];
 }
-
