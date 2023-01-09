@@ -10,8 +10,6 @@ const environmentFile = fs.readFileSync(
   "utf8"
 );
 
-// TODO
-
 const updatedFile = `export const environment = {
   production: 'false',
   CLIENT_ID: '${process.env.CLIENT_ID}',
