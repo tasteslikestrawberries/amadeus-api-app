@@ -50,6 +50,10 @@ form {
     outline-color: red;
     border: 2px solid red;
   }
+
+  button:disabled {
+    opacity: 0.5;
+  }
 }
 
 .asteriks {
