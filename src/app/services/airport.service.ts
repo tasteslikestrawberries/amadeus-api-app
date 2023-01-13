@@ -52,13 +52,13 @@ export class AirportService {
     });
 
     //sort by desc, copy first 10
-    this.topAirports = this.topAirports
-      .sort((a, b) => b.searchCount - a.searchCount)
-      .slice(0, 10);
+    this.topAirports = this.topAirports.sort(
+      (a, b) => b.searchCount - a.searchCount
+    );
 
     //save to storage and emit
     localStorage.setItem('topAirports', JSON.stringify(this.topAirports));
-    this.subject.next(this.topAirports);
+    this.subject.next(this.topAirports.slice(0, 10));
   }
 
   isAirportInTopList(airportId: string): Observable<boolean> {
