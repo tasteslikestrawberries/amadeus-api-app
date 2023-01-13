@@ -1,0 +1,34 @@
+<div class="top-list-wrapper">
+  <h3>Top 10 najpretraživanijih aerodroma</h3>
+  <table *ngIf="(topAirports$ | async)!.length >= 10; else noData">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Aerodrom</th>
+        <th>Broj pretraživanja</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        [ngClass]="{ firstRank: first }"
+        *ngFor="
+          let topAirport of topAirports$ | async;
+          let i = index;
+          let first = first
+        "
+      >
+        <td># {{ i + 1 }}</td>
+        <td>
+          <span
+            >{{ topAirport.name }} ({{ topAirport.address.countryCode }})</span
+          >
+        </td>
+        <td>{{ topAirport.searchCount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noData>
+  <div class="noDataText">Nema podataka. Započni pretragu!</div>
+</ng-template>

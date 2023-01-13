@@ -1,17 +1,17 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IAirport } from 'src/app/models/IAirport';
-import { AirportService } from '../../../services/airport.service';
+
 import { Observable, fromEvent, of, catchError } from 'rxjs';
 import {
   debounceTime,
   distinctUntilChanged,
   switchMap,
   tap,
-  finalize,
   map,
 } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { AirportDetailsComponent } from './../airport-details/airport-details.component';
+import { AirportService } from 'src/app/services/airport.service';
 
 @Component({
   selector: 'app-airport-list',
@@ -24,6 +24,7 @@ export class AirportListComponent {
   airportDetailsComponent!: AirportDetailsComponent;
 
   airports$!: Observable<IAirport[]>;
+
   //isLoading = false;
   noResults = false;
   noInput = true;
@@ -75,5 +76,9 @@ export class AirportListComponent {
 
   getAirportNameExpression() {
     return `${this.airportDetailsComponent?.airport?.name}(${this.airportDetailsComponent?.airport?.countryCode})`;
+  }
+
+  isAccented(id: IAirport['id']): Observable<boolean> {
+    return this.airportService.isAirportInTopList(id);
   }
 }

@@ -12,6 +12,7 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TopTenListComponent } from './features/airports/top-ten-list/top-ten-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AirportListComponent,
     HeaderComponent,
     AirportDetailsComponent,
+    TopTenListComponent,
   ],
   imports: [
     BrowserModule,

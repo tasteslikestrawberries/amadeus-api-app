@@ -18,6 +18,7 @@ export interface IAirport {
   subType: string;
   timeZoneOffset: string;
   type: string;
+  searchCount: number;
 }
 
 export interface IAirportFormData {

@@ -6,13 +6,18 @@ button {
 
 h1 {
   font-size: large;
-  margin: 1rem 0;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
-.header-wrapper {
+.bi-airplane-fill {
+  transform: rotate(45deg);
+  font-size: 25px;
+  color: #4badee;
+}
+
+.headline-icon-wrapper {
   @include flex-center;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.15em;
   font-weight: 200;
 }
 

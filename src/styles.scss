@@ -1,11 +1,13 @@
+@import "./assets/scss/mixins";
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #ebf5ff;
+  font-family: "Roboto", sans-serif;
+  background-color: #f6f8fa;
   color: #1c1c34;
 }
 
@@ -13,7 +15,8 @@ body {
   box-sizing: border-box;
 }
 
-ul, div {
+ul,
+div {
   margin: 0;
   padding: 0;
 }
@@ -21,10 +24,11 @@ ul, div {
 button {
   cursor: pointer;
   font-weight: 700;
-  border: 1.5px solid #4badee;
-  background-color: #fff;
+  background-color: #4badee;
+  color: #fff;
+  border: 1px solid #4badee;
   border-radius: 5px;
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 
 .invalid-control {
@@ -33,6 +37,26 @@ button {
   color: red;
 }
 
+input {
+  background-color: transparent;
+  padding: 0.5rem;
+  outline-color: #4badee;
+  border: 2px solid #4badee;
+  border-radius: 3px;
+}
+
+form {
+  input:has(+ .invalid-control) {
+    outline-color: red;
+    border: 2px solid red;
+  }
+}
+
 .asteriks {
   color: red;
+}
+
+.noDataText {
+  @include flex-center;
+  margin: 1rem 0;
 }

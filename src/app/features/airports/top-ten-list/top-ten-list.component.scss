@@ -1,0 +1,42 @@
+table {
+  border-collapse: collapse;
+  font-size: 11px;
+
+  th {
+    text-align: left;
+  }
+
+  tr {
+    font-weight: 700;
+    line-height: 1.6em;
+  }
+
+  td:first-of-type {
+    padding-right: 2rem;
+  }
+
+  td:last-of-type {
+    text-align: center;
+  }
+
+  .firstRank {
+    color: green;
+    background: linear-gradient(
+      50deg,
+      #d8ecf8 20%,
+      #c1e2f8 50%,
+      #9cd5fa 70%,
+      #98d6ff 90%
+    );
+  }
+}
+
+h3 {
+  text-align: center;
+}
+
+@media (width >=900px) {
+  table {
+    font-size: unset;
+  }
+}
