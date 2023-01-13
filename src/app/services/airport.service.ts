@@ -17,7 +17,7 @@ export class AirportService {
     const storedTopAirports = localStorage.getItem('topAirports');
     if (storedTopAirports) {
       this.topAirports = JSON.parse(storedTopAirports);
-      this.subject.next(this.topAirports);
+      this.subject.next(this.topAirports.slice(0, 10));
     }
   }
 
